@@ -10,10 +10,14 @@ let isAlive = true;
 let message = '';
 // Store message-el paragraph in variable
 let messageEl = document.getElementById('message-el');
-let sumEl = document.getElementById('sum-el');
+// Added querySelector instead of getElelmentById
+let sumEl = document.querySelector('#sum-el');
+// Store cards-el paragraph in variable
+let cardsEl = document.querySelector('#cards-el');
 // Create startGame() function
 function startGame() {
 	sumEl.textContent += sum;
+	cardsEl.textContent += firstCard + ',' + ' ' + secondCard;
 	// create if/else statements
 	if (sum <= 21) {
 		message = 'Do you a want to draw a new card?';
