@@ -8,6 +8,8 @@ let hasBlackjack = false;
 let isAlive = true;
 // create meassage to inform the person if they won or lost
 let message = '';
+// Store message-el paragraph in variable
+let messageEl = document.getElementById('message-el');
 // Create startGame() function
 function startGame() {
 	// create if/else statements
@@ -20,6 +22,6 @@ function startGame() {
 		message = "You're out of the game!";
 		isAlive = false;
 	}
-	console.log(message);
+	// display message-el print to the HTML
+	messageEl.textContent = message;
 }
-// print to the HTML
