@@ -31,3 +31,8 @@ function startGame() {
 	// display message-el print to the HTML
 	messageEl.textContent = message;
 }
+
+// Add New card function
+function newCard() {
+	console.log('New Card');
+}
