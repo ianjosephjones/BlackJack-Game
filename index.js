@@ -1,6 +1,7 @@
 // Variables to for cards
 let firstCard = 10;
 let secondCard = 9;
+let cards = [firstCard, secondCard];
 // total cards drawn
 let sum = firstCard + secondCard;
 // boolean if the person won or now
@@ -14,9 +15,13 @@ let messageEl = document.getElementById('message-el');
 let sumEl = document.querySelector('#sum-el');
 // Store cards-el paragraph in variable
 let cardsEl = document.querySelector('#cards-el');
-// Create startGame() function
+// Create startGame() that renders renderGame()
 function startGame() {
-	cardsEl.textContent = 'Cards: ' + firstCard + ',' + ' ' + secondCard;
+	renderGame();
+}
+// Create startGame() function
+function renderGame() {
+	cardsEl.textContent = 'Cards: ' + cards[0] + ',' + ' ' + cards[1];
 	sumEl.textContent = 'Sum: ' + sum;
 	// create if/else statements
 	if (sum <= 20) {
@@ -34,7 +39,8 @@ function startGame() {
 
 // Add New card function
 function newCard() {
+	// Add hard code variable number
 	let card = 2;
 	sum += card;
-	startGame();
+	renderGame();
 }
