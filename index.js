@@ -2,7 +2,7 @@
 let firstCard = 10;
 let secondCard = 9;
 // total cards drawn
-let sum = firstCard + secondCard
+let sum = firstCard + secondCard;
 // boolean if the person won or now
 let hasBlackjack = false;
 let isAlive = true;
@@ -10,6 +10,12 @@ let isAlive = true;
 let message = '';
 // create if/else statements
 if (sum <= 21) {
-
+	message = 'Do you a want to draw a new card?';
+} else if (sum === 21) {
+	message = "Wohoo! You've got Blackjack!";
+	hasBlackjack = true;
+} else {
+	message = "You're out of the game!";
+	isAlive = false;
 }
 // print to the HTML
