@@ -19,7 +19,7 @@ function startGame() {
 	cardsEl.textContent = 'Cards: ' + firstCard + ',' + ' ' + secondCard;
 	sumEl.textContent = 'Sum: ' + sum;
 	// create if/else statements
-	if (sum <= 21) {
+	if (sum <= 20) {
 		message = 'Do you a want to draw a new card?';
 	} else if (sum === 21) {
 		message = "Wohoo! You've got Blackjack!";
@@ -34,5 +34,7 @@ function startGame() {
 
 // Add New card function
 function newCard() {
-	console.log('New Card');
+	let card = 2;
+	sum += card;
+	startGame();
 }
