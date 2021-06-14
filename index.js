@@ -1,6 +1,7 @@
 // Variables to for cards
 let firstCard = 10;
 let secondCard = 9;
+// an array of cards
 let cards = [firstCard, secondCard];
 // total cards drawn
 let sum = firstCard + secondCard;
@@ -21,7 +22,12 @@ function startGame() {
 }
 // Create startGame() function
 function renderGame() {
-	cardsEl.textContent = 'Cards: ' + cards[0] + ',' + ' ' + cards[1];
+	cardsEl.textContent = 'Cards: ';
+	// Create for loop to render all cards
+	for (let i = 0; i < cards.length; i++) {
+		cardsEl.textContent += cards[i] + ' ';
+	}
+
 	sumEl.textContent = 'Sum: ' + sum;
 	// create if/else statements
 	if (sum <= 20) {
@@ -42,5 +48,7 @@ function newCard() {
 	// Add hard code variable number
 	let card = 2;
 	sum += card;
+	cards.push(card);
+	console.log(cards);
 	renderGame();
 }
