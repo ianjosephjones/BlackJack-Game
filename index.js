@@ -1,3 +1,8 @@
+// Create player object with name and chips
+let player = {
+	name: 'Ian',
+	chips: 145,
+};
 // an array of cards
 let cards = [];
 // total cards drawn
@@ -13,7 +18,10 @@ let messageEl = document.getElementById('message-el');
 let sumEl = document.querySelector('#sum-el');
 // Store cards-el paragraph in variable
 let cardsEl = document.querySelector('#cards-el');
-console.log(cards);
+// Get play-el and store it in variable palyerEl
+let playerEl = document.getElementById('player-el');
+// Render player's name and chip in playerEl
+playerEl.textContent = player.name + ':  $' + player.chips;
 
 // Create Random Card Function
 function getRandomCard() {
@@ -62,7 +70,6 @@ function renderGame() {
 function newCard() {
 	// Add hard code variable number
 	if (isAlive === true && hasBlackjack === false) {
-		getRandomCard();
 		let card = getRandomCard();
 		sum += card;
 		cards.push(card);
