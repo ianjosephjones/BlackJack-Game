@@ -1,13 +1,10 @@
-// Variables to for cards
-let firstCard = getRandomCard();
-let secondCard = getRandomCard();
 // an array of cards
-let cards = [firstCard, secondCard];
+let cards = [];
 // total cards drawn
-let sum = firstCard + secondCard;
+let sum = 0;
 // boolean if the person won or now
 let hasBlackjack = false;
-let isAlive = true;
+let isAlive = false;
 // create meassage to inform the person if they won or lost
 let message = '';
 // Store message-el paragraph in variable
@@ -20,11 +17,21 @@ let cardsEl = document.querySelector('#cards-el');
 // Create Random Card Function
 function getRandomCard() {
 	let randomCard = Math.floor(Math.random() * 13 + 1);
-	return randomCard;
+	if (randomCard > 10) {
+		return 10;
+	} else if (randomCard === 1) {
+		return 11;
+	} else {
+		return randomCard;
+	}
 }
-console.log(getRandomCard());
 // Create startGame() that renders renderGame()
 function startGame() {
+	isAlive = true;
+	let firstCard = getRandomCard();
+	let secondCard = getRandomCard();
+	cards = [firstCard + secondCard];
+	sum = firstCard + secondCard;
 	renderGame();
 }
 // Create startGame() function
