@@ -13,10 +13,11 @@ let messageEl = document.getElementById('message-el');
 let sumEl = document.querySelector('#sum-el');
 // Store cards-el paragraph in variable
 let cardsEl = document.querySelector('#cards-el');
+console.log(cards);
 
 // Create Random Card Function
 function getRandomCard() {
-	let randomCard = Math.floor(Math.random() * 13 + 1);
+	let randomCard = Math.floor(Math.random() * 13) + 1;
 	if (randomCard > 10) {
 		return 10;
 	} else if (randomCard === 1) {
@@ -25,12 +26,12 @@ function getRandomCard() {
 		return randomCard;
 	}
 }
-// Create startGame() that renders renderGame()
+// Create startGame()
 function startGame() {
 	isAlive = true;
 	let firstCard = getRandomCard();
 	let secondCard = getRandomCard();
-	cards = [firstCard + secondCard];
+	cards = [firstCard, secondCard];
 	sum = firstCard + secondCard;
 	renderGame();
 }
@@ -60,9 +61,12 @@ function renderGame() {
 // Add New card function
 function newCard() {
 	// Add hard code variable number
-	let card = getRandomCard();
-	sum += card;
-	cards.push(card);
-	console.log(cards);
-	renderGame();
+	if (isAlive === true && hasBlackjack === false) {
+		getRandomCard();
+		let card = getRandomCard();
+		sum += card;
+		cards.push(card);
+		console.log(cards);
+		renderGame();
+	}
 }
