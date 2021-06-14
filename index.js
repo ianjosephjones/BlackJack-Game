@@ -1,6 +1,6 @@
 // Variables to for cards
-let firstCard = 10;
-let secondCard = 9;
+let firstCard = getRandomCard();
+let secondCard = getRandomCard();
 // an array of cards
 let cards = [firstCard, secondCard];
 // total cards drawn
@@ -16,6 +16,13 @@ let messageEl = document.getElementById('message-el');
 let sumEl = document.querySelector('#sum-el');
 // Store cards-el paragraph in variable
 let cardsEl = document.querySelector('#cards-el');
+
+// Create Random Card Function
+function getRandomCard() {
+	let randomCard = Math.floor(Math.random() * 13 + 1);
+	return randomCard;
+}
+console.log(getRandomCard());
 // Create startGame() that renders renderGame()
 function startGame() {
 	renderGame();
@@ -46,7 +53,7 @@ function renderGame() {
 // Add New card function
 function newCard() {
 	// Add hard code variable number
-	let card = 2;
+	let card = getRandomCard();
 	sum += card;
 	cards.push(card);
 	console.log(cards);
